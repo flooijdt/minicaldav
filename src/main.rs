@@ -32,6 +32,6 @@ fn main() {
     let calendars = minicaldav::get_calendars(agent.clone(), &credentials, &url).unwrap();
 
     for calendar in calendars {
-        println!("{:?}", calendar);
+        println!("{:#?}", calendar);
     }
 }
