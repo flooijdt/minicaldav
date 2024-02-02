@@ -40,6 +40,17 @@ pub fn main() {
     for calendar in calendars {
         println!("{:#?}", &Calendar::name(&calendar));
         println!("{:#?}", &Calendar::color(&calendar));
+        if Calendar::name(&calendar) == &String::from("Aufgaben") {
+            let credentials = minicaldav::Credentials::Basic(username.clone(), password.clone());
+            let (events, errors) =
+                minicaldav::get_events(agent.clone(), &credentials, &calendar).unwrap();
+            for event in events {
+                println!("{:?}", event);
+            }
+            for error in errors {
+                println!("Error: {:?}", error);
+            }
+        }
     }
     println!("6");
 
