@@ -42,8 +42,8 @@ pub fn main() {
         println!("{:#?}", &Calendar::color(&calendar));
         if Calendar::name(&calendar) == &String::from("Aufgaben") {
             let credentials = minicaldav::Credentials::Basic(username.clone(), password.clone());
-            let (events, errors) =
-                minicaldav::get_events(agent.clone(), &credentials, &calendar).unwrap();
+            let (events, errors) = minicaldav::get_events(agent.clone(), &credentials, &calendar)
+                .expect("could not get events.");
             for event in events {
                 println!("{:?}", event);
             }
