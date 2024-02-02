@@ -1,4 +1,4 @@
-pub use minicaldav::{Calendar, Event};
+use minicaldav::{Calendar, Event};
 use std::io;
 
 pub fn main() {
@@ -50,7 +50,7 @@ pub fn main() {
             for event in events {
                 println!("{:#?}", Event::etag(&event));
                 println!("{:#?}", event.property("SUMMARY"));
-                // println!("{:#?}", Event::etag(&event));
+                println!("{:#?}", Event::etag(&event));
                 // println!("{:#?}", event);
             }
             for error in errors {
