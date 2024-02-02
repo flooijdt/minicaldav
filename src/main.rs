@@ -1,4 +1,3 @@
-use minicaldav::EventBuilder;
 pub use minicaldav::{Calendar, Event};
 use std::io;
 
