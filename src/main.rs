@@ -1,6 +1,8 @@
+use minicaldav::EventBuilder;
+pub use minicaldav::{Calendar, Event};
 use std::io;
 
-fn main() {
+pub fn main() {
     let mut url = String::new();
     let mut username = String::new();
 
@@ -37,7 +39,11 @@ fn main() {
     println!("5");
 
     for calendar in calendars {
-        println!("{:#?}", calendar);
+        println!("{:#?}", &Calendar::name(&calendar));
     }
     println!("6");
+
+    // let faeker = Calendar { base_url: todo!(), inner: todo!() }
+    // let fakker = Event{ etag: todo!(), url, ical: todo!() }
+    // minicaldav::Calendar::name(k)
 }
