@@ -40,6 +40,7 @@ pub fn main() {
 
     for calendar in calendars {
         println!("{:#?}", &Calendar::name(&calendar));
+        println!("{:#?}", &Calendar::color(&calendar));
     }
     println!("6");
 
