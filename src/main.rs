@@ -49,7 +49,7 @@ pub fn main() {
                 .expect("could not get events.");
             for event in events {
                 println!("{:#?}", Event::etag(&event));
-                println!("{:#?}", event);
+                // println!("{:#?}", event);
             }
             for error in errors {
                 println!("Error: {:#?}", error);
