@@ -41,7 +41,7 @@ pub fn main() {
         // println!("{:#?}", &Calendar::name(&calendar));
         println!("{:#?}", &calendar.name());
         println!("{:#?}", &calendar.color());
-        if Calendar::name(&calendar) == &String::from("Aufgaben") {
+        if calendar.name() == &String::from("Aufgaben") {
             let credentials = minicaldav::Credentials::Basic(
                 String::from(username.as_str().trim()),
                 String::from(password.as_str().trim()),
