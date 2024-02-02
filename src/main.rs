@@ -48,10 +48,10 @@ pub fn main() {
             let (events, errors) = minicaldav::get_events(agent.clone(), &credentials, &calendar)
                 .expect("could not get events.");
             for event in events {
-                println!("{:?}", event);
+                println!("{:#?}", event);
             }
             for error in errors {
-                println!("Error: {:?}", error);
+                println!("Error: {:#?}", error);
             }
         }
     }
