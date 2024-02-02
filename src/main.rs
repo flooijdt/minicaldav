@@ -38,8 +38,9 @@ pub fn main() {
     println!("5");
 
     for calendar in calendars {
-        println!("{:#?}", &Calendar::name(&calendar));
-        println!("{:#?}", &Calendar::color(&calendar));
+        // println!("{:#?}", &Calendar::name(&calendar));
+        println!("{:#?}", &calendar.name());
+        println!("{:#?}", &calendar.color());
         if Calendar::name(&calendar) == &String::from("Aufgaben") {
             let credentials = minicaldav::Credentials::Basic(
                 String::from(username.as_str().trim()),
@@ -49,7 +50,7 @@ pub fn main() {
                 .expect("could not get events.");
             for event in events {
                 // println!("{:#?}", Event::etag(&event));
-                // println!("{:#?}", event.property("SUMMARY"));
+                println!("{:#?}", event.property("SUMMARY"));
                 println!("{:#?}", event.etag());
                 // println!("{:#?}", Event::etag(&event));
                 // println!("{:#?}", event);
